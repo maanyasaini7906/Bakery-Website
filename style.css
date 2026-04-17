@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+*{
+    margin :0;
+    padding :0;
+    box-sizing : border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --orange-clr : #E96C28;
+    --white-clr : #fff;
+    --black-clr : #000;
+    --gray-clr : #636363;
+    --light-gray : #c4c4c4;
+    --dawn-pink : #fae7e5;
+    --frosted-mint : #dcfef9;
+}
+
+/* Header part */
+.logo{
+    z-index:6;
+}
+.logo-txt {
+    font-size: 1.5rem;
+    color: var(--orange-clr);
+    font-weight:bold;
+}
+
+a {
+    text-decoration: none;;
+} 
+
+span{
+    color : var(--black-clr);
+}
+
+.navlist{
+    display : flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+.navlinks {
+    color : var(--black-clr);
+    font-weight :500;
+}
+
+.active,
+.navlinks:hover{
+    color: var(--orange-clr);
+}
+
+.icons-link{
+    background: var(--orange-clr);
+    width :2.3rem;
+    aspect-ratio: 1;
+    border-radius:50%;
+    margin-right: 0.5rem;
+    display : inline-block;
+    text-align: center;
+    line-height: 2.3rem;
+    transition : 0.3s ease-in-out;
+}
+
+.icons-link:hover{
+    transform: translateY(-10%);
+}
+
+.fa-solid ,
+.fa-brands {
+    font-size: 1.1rem;
+    color : white;
+}
+
+header {
+    height :13vh;
+
+}
+
+.navbar {
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    height :100%;
+}
+
+.container{
+    width :80%;
+    margin : auto;
+}
+
+
+.hamburger{
+    cursor:pointer;
+    display : none;
+}
+
+.burger{
+    background: var(--black-clr);
+    width :2.3rem;
+    height : .25rem;
+    margin : 0.3rem;
+    border-radius: 2rem;
+
+}
+
+/* Sections Part */
+
+/* Hero Section */
+
+.hero-section{
+    height :calc(100vh - 13vh);
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+
+
+.content{
+    flex:1;
+
+}
+
+.image-container{
+    flex:1;
+    position : relative;
+
+}
+
+.image-container::before{
+    content:'';
+    position : absolute;
+    top:50%;
+    right:0%;
+    background : var(--dawn-pink);
+    height:30vh;
+    width: 35rem;
+    border-radius : 50%;
+    z-index : -1;
+    filter: blur(100px);
+
+}
+
+img{
+    max-width:100%;
+    height : auto;
+}
+
+h1{
+    font-size:3.5rem;
+    line-height:4rem;
+    margin-top : 1rem;
+}
+.watch{
+    display:flex;
+    gap:0.5rem;
+    align-items: center;
+}
+
+p {
+    color:var(--gray-clr);
+    margin-block : 1.5rem;
+    max-width : 500px;
+}
+
+.btn-container{
+    display :flex;
+    gap:1.5rem;
+}
+
+button , 
+.form-btn {
+    background: var(--orange-clr);
+    color :var(--white-clr);
+    border : 0.1rem solid var(--orange-clr);
+    padding: 0.55rem 1.5rem;
+    border-radius:5rem;
+    font-size:1rem;
+}
+
+[data-type = 'bordered-btn'] {
+    background: transparent;
+    color :var(--orange-clr);
+}
+
+.mint-glow{
+    position:relative;
+}
+
+.mint-glow::before{
+    content:'';
+    position: absolute;
+    top:-5%;
+    left:-15%;
+    width:20rem;
+    height:100%;
+    background : var(--frosted-mint);
+    z-index:-1; 
+    filter :blur(150px);
+
+}
+
+/* Stored Section */
+
+.other-section{
+    padding-block : 5rem;
+}
+
+.row-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+}
+
+.column-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap:2rem;  /* this */
+    max-width: 1000px;
+    margin:auto;
+
+}
+
+h2{
+    font-size: 1.8rem;
+
+}
+
+[data-type='centered-txt']{
+    text-align: center;
+    max-width: 600px;
+    margin-block:0.5rem;
+}
+
+.card-container {
+    display:flex;
+    justify-content: center;
+    gap:2rem;
+    margin-top:2rem;
+    flex-wrap: wrap;
+}
+
+.card{
+    width:12rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: rgba(0,0,0,0.16)
+    0px 1px 4px;
+    transition : 0.2s ease-in-out;
+}
+
+[data-type='category']{
+    padding-block:2.5rem;
+}
+
+.card:hover {
+    box-shadow: rgba(50,50,93,0.25)
+    0px 13px 27px -5px ,
+    rgba(0,0,0,0.3)
+    0px 8px 16px -8px;
+    transform:translateY(-10px);
+}
+
+/* Featured Food  */
+
+h4{
+    font-weight: 600;
+}
+
+[data-type='item']{
+    padding-bottom:1.3rem;
+    overflow: hidden;
+}
+
+.image-part{
+    width: 100%;
+    height : 23vh;
+}
+
+.image-part img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail{
+    margin-top:1rem;
+}
+
+/* App Section */
+
+.app-img{
+    display: flex;
+    gap:1rem;
+    height: 4.2rem;
+    width: 100%;
+}
+
+/* Best Food */
+
+.rating img{
+    width:6rem;
+}
+
+.rating h4{
+    color: var(--orange-clr);
+    font-size: 1.3rem;
+}
+
+.rating {
+    display:flex;
+    align-items: center;
+    gap:2rem;
+    margin-top: 1rem;
+}
+
+/* Newsletter Section */
+
+.form-container{
+    margin-top: 1.2rem;
+    border :0.2rem solid var(--light-gray);
+    height: 3.5rem;
+    border-radius: 5rem;
+    padding:0.25rem;
+}
+
+input[type="email"]{
+    height: 100%;
+    border-radius : 5rem 0 0 5rem;
+    border:none;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+input:focus{
+    outline:none;
+}
+
+/* Footer Section */
+
+.footer-links{
+    font-size : 0.95;
+    color:var(--gray-clr);
+}
+
+.footer-links:hover{
+    color:var(--orange-clr);
+
+}
+
+.footer-list{
+    margin-top: 2rem;
+}
+
+.footer-list{
+    margin-block: 0.5rem;
+}
+
+[data-type='balanced-txt']{
+    max-width: 300px;
+}
+
+footer .card-container{
+    /* justify-content: space-between; */
+    justify-content: center;
+    gap:2.5rem;
+}
+
+footer .column:first-child{
+    flex:2.5rem;
+    max-width: 320px;
+}
+
+footer .column{
+    text-align: left;
+}
+
+footer{
+    margin-bottom: 2rem;
+}
+
+.line{
+    width:100%;
+    height:0.09rem;
+    background: var(--light-gray);
+    margin-block: 1rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width : 680px){
+    .container{
+        width:90%;
+    }
+    .image-container{
+        display:none;
+    }
+    h1{
+        font-size:2.8rem;
+    }
+     
+    .nav-icons {
+        display:none;
+    }
+    .hamburger{
+        display:block;
+    }
+    .navlist{
+        position:absolute;
+        top:0;
+        left:0;
+        flex-direction:column;
+        justify-content: center;
+        background: var(--dawn-pink);
+        height:100vh;
+        width:60%;
+        z-index:5;
+        transform:translate(-100%);
+        transition: .5s ease-in-out;
+    }
+
+    .navlist-active{
+        transform:translate(0%);
+    }
+
+}
